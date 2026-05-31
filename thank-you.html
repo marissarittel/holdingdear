@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank you — Holding Dear</title>
+<meta name="description" content="Your note has arrived. Holding Dear — matrescence companionship." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #F5EFE3;
+    --cream-deep: #ECE3D1;
+    --sage-pale: #D4D6C0;
+    --green-mid: #6B7A5C;
+    --green-deep: #3E4A38;
+    --green-darkest: #2A3526;
+    --mustard: #C8A24A;
+    --mustard-soft: #D9B970;
+    --magenta: #9C3A5C;
+    --ink: #2A2620;
+    --ink-soft: #4F4A40;
+    --line: rgba(62, 74, 56, 0.18);
+    --line-soft: rgba(62, 74, 56, 0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::selection {
+    background: var(--mustard);
+    color: var(--green-deep);
+  }
+
+  /* Top nav — minimal, just the brand and a way home */
+  nav.top-nav {
+    background: rgba(245, 239, 227, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .nav-frame {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--green-deep);
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: -0.005em;
+  }
+
+  .nav-home {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
+  }
+
+  .nav-home:hover { color: var(--magenta); }
+
+  /* Main content — centered, quiet */
+  .thanks-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .thanks-wrap::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--sage-pale) 0%, transparent 65%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .thanks-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--mustard-soft) 0%, transparent 70%);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .thanks-card {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .thanks-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  .thanks-line-1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(36px, 5.5vw, 54px);
+    line-height: 1.2;
+    color: var(--green-deep);
+    margin-bottom: 24px;
+    letter-spacing: -0.005em;
+  }
+
+  .thanks-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--mustard);
+    margin: 32px auto;
+  }
+
+  .thanks-line-2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.6vw, 24px);
+    color: var(--green-mid);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  /* Footer — slim version */
+  footer.thanks-footer {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .footer-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mustard-soft);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .nav-frame { padding: 16px 24px; }
+    .nav-brand { font-size: 20px; }
+    .thanks-wrap { padding: 60px 24px; }
+    .thanks-eyebrow { margin-bottom: 24px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-frame">
+    <a href="/" class="nav-brand">Holding Dear</a>
+    <a href="/" class="nav-home">← Back to home</a>
+  </div>
+</nav>
+
+<main class="thanks-wrap">
+  <div class="thanks-card">
+    <div class="thanks-eyebrow">Your note has arrived</div>
+    <h1 class="thanks-line-1">Thank you.</h1>
+    <div class="thanks-divider"></div>
+    <p class="thanks-line-2">I look forward to connecting with you shortly.</p>
+  </div>
+</main>
+
+<footer class="thanks-footer">
+  <div class="footer-content">
+    <p class="footer-brand">Holding Dear</p>
+    <p class="footer-tagline">Companionship for early motherhood</p>
+  </div>
+</footer>
+
+</body>
+</html>
