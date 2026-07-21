@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Holding Dear — Companionship for early motherhood</title>
+<meta name="description" content="Matrescence companionship for new mothers, held virtually. One-to-one support through the becoming of a mother, with Marissa — a certified matrescence guide based in San Antonio." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #F5EFE3;
+    --cream-deep: #ECE3D1;
+    --sage-pale: #D4D6C0;
+    --green-mid: #6B7A5C;
+    --green-deep: #3E4A38;
+    --green-darkest: #2A3526;
+    --mustard: #C8A24A;
+    --mustard-soft: #D9B970;
+    --magenta: #9C3A5C;
+    --magenta-soft: #B85577;
+    --ink: #2A2620;
+    --ink-soft: #4F4A40;
+    --line: rgba(62, 74, 56, 0.18);
+    --line-soft: rgba(62, 74, 56, 0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--mustard);
+    color: var(--green-deep);
+  }
+
+  /* ===== Nav ===== */
+  nav.top-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(245, 239, 227, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 100;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .nav-frame {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--green-deep);
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: -0.005em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--magenta);
+  }
+
+  /* ===== Frame ===== */
+  .frame {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ===== Hero ===== */
+  section.hero {
+    padding: 100px 0 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--sage-pale) 0%, transparent 65%);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, var(--mustard-soft) 0%, transparent 70%);
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  .hero-content { animation: fadeIn 1.2s ease-out; }
+
+  .hero-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.15;
+    color: var(--green-deep);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    max-width: 520px;
+  }
+
+  .hero-sig {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--green-deep);
+    line-height: 1.6;
+    max-width: 520px;
+    padding-left: 22px;
+    border-left: 1px solid var(--mustard);
+  }
+
+  /* Hero photo */
+  .hero-photo-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+      0 4px 12px rgba(42, 38, 32, 0.08),
+      0 24px 60px rgba(42, 38, 32, 0.12);
+    animation: fadeIn 1.4s ease-out 0.2s both;
+  }
+
+  /* Placeholder gradient — replace with real photo when ready */
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(217, 185, 112, 0.55) 0%, transparent 55%),
+      radial-gradient(ellipse at 30% 80%, rgba(107, 122, 92, 0.4) 0%, transparent 60%),
+      linear-gradient(160deg,
+        rgba(217, 185, 112, 0.35) 0%,
+        rgba(107, 122, 92, 0.7) 45%,
+        rgba(42, 53, 38, 0.9) 100%);
+    position: relative;
+  }
+
+  .hero-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 60%, rgba(245, 239, 227, 0.08) 0%, transparent 30%),
+      radial-gradient(circle at 80% 20%, rgba(245, 239, 227, 0.1) 0%, transparent 25%);
+    pointer-events: none;
+  }
+
+  /* ===== Section base ===== */
+  section.content {
+    padding: 90px 0;
+    position: relative;
+  }
+
+  section.alt-bg {
+    background: var(--cream-deep);
+  }
+
+  .section-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    font-weight: 500;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 42px);
+    line-height: 1.2;
+    color: var(--green-deep);
+    margin-bottom: 36px;
+    letter-spacing: -0.005em;
+    max-width: 720px;
+  }
+
+  .section-heading em { font-style: italic; color: var(--magenta); }
+
+  .body-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    max-width: 680px;
+    margin-bottom: 22px;
+  }
+
+  /* ===== Recognition section ===== */
+  .recognition-list {
+    margin: 40px 0 60px;
+  }
+
+  .recognition-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.4vw, 24px);
+    color: var(--green-deep);
+    line-height: 1.5;
+    padding: 16px 0 16px 28px;
+    border-left: 1px solid var(--mustard);
+    margin-bottom: 14px;
+    max-width: 740px;
+    transition: border-left-color 0.3s ease, padding-left 0.3s ease;
+  }
+
+  .recognition-line:hover {
+    border-left-color: var(--magenta);
+    padding-left: 32px;
+  }
+
+  /* Manifesto */
+  .manifesto {
+    margin-top: 70px;
+    padding: 48px 40px;
+    background: var(--cream);
+    border-top: 1px solid var(--mustard);
+    border-bottom: 1px solid var(--mustard);
+    text-align: center;
+    max-width: 800px;
+  }
+
+  .alt-bg .manifesto {
+    background: var(--cream-deep);
+  }
+
+  .manifesto-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(26px, 3.4vw, 36px);
+    line-height: 1.3;
+    color: var(--green-deep);
+    letter-spacing: -0.005em;
+  }
+
+  .manifesto-text em {
+    font-style: italic;
+    color: var(--magenta);
+    font-weight: 500;
+  }
+
+  /* ===== Matrescence section ===== */
+  .matrescence-pullquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.4;
+    color: var(--magenta);
+    margin: 32px 0;
+    padding: 28px 32px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 4px;
+    max-width: 680px;
+  }
+
+  /* ===== Offer section ===== */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 50px;
+  }
+
+  .offer-card {
+    background: white;
+    border: 1px solid var(--line-soft);
+    border-radius: 4px;
+    padding: 44px 36px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .offer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(42, 38, 32, 0.08);
+  }
+
+  .offer-card.primary {
+    background: var(--green-deep);
+    color: var(--cream);
+    border-color: var(--green-deep);
+  }
+
+  .offer-card.primary .offer-tag { color: var(--mustard-soft); }
+  .offer-card.primary .offer-name,
+  .offer-card.primary .offer-price { color: var(--cream); }
+  .offer-card.primary .offer-desc,
+  .offer-card.primary .offer-detail { color: var(--cream-deep); }
+
+  .offer-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .offer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .offer-desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+
+  .offer-detail-list {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .offer-detail {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    padding: 7px 0 7px 18px;
+    position: relative;
+  }
+
+  .offer-detail::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--mustard);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .offer-card.primary .offer-detail::before { color: var(--mustard-soft); }
+
+  .offer-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--green-deep);
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .offer-card.primary .offer-price {
+    border-top-color: rgba(245, 239, 227, 0.22);
+  }
+
+  .offer-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--green-mid);
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  /* ===== About section ===== */
+  .about-content { max-width: 720px; }
+
+  .about-content p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+
+  .about-content p em {
+    font-style: italic;
+    color: var(--green-deep);
+  }
+
+  .about-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--magenta);
+    margin: 50px 0 18px;
+    font-weight: 500;
+  }
+
+  .about-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--mustard);
+    margin: 36px 0;
+  }
+
+  /* ===== Resources section ===== */
+  .resources-intro {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 50px;
+    max-width: 640px;
+    font-style: italic;
+  }
+
+  .resource-group {
+    margin-bottom: 42px;
+  }
+
+  .resource-group-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--green-deep);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+
+  .resource-group ul {
+    list-style: none;
+  }
+
+  .resource-group li {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    padding: 8px 0 8px 22px;
+    position: relative;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .resource-group li:last-child { border-bottom: none; }
+
+  .resource-group li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: var(--mustard);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .resource-group li em {
+    font-style: italic;
+    color: var(--green-deep);
+    font-weight: 400;
+  }
+
+  .resource-group li strong {
+    color: var(--green-deep);
+    font-weight: 500;
+  }
+
+  .resource-group a {
+    color: var(--magenta);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+  }
+
+  .resource-group a:hover {
+    border-bottom-color: var(--magenta);
+  }
+
+  /* ===== FAQ section ===== */
+  .faq-list {
+    margin-top: 44px;
+    max-width: 760px;
+  }
+
+  .faq-item {
+    border-top: 1px solid var(--line);
+    padding: 30px 0;
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(21px, 2.4vw, 25px);
+    line-height: 1.35;
+    color: var(--green-deep);
+    margin-bottom: 14px;
+    letter-spacing: -0.005em;
+  }
+
+  .faq-answer {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    max-width: 660px;
+  }
+
+  .faq-answer em {
+    font-style: italic;
+    color: var(--green-deep);
+  }
+
+  /* ===== Inquire section ===== */
+  .inquire-content { max-width: 640px; }
+
+  .inquire-intro {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+  }
+
+  .inquire-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .form-field { display: flex; flex-direction: column; }
+
+  .form-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 14px 16px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .alt-bg .form-input,
+  .alt-bg .form-select,
+  .alt-bg .form-textarea {
+    background: white;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--magenta);
+    background: white;
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 130px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+  .form-helper {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--green-mid);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .form-submit {
+    align-self: flex-start;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--green-deep);
+    border: none;
+    padding: 16px 36px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.15s ease;
+    margin-top: 12px;
+  }
+
+  .form-submit:hover {
+    background: var(--green-darkest);
+    transform: translateY(-1px);
+  }
+
+  /* Inline thank-you message */
+  .form-thanks {
+    text-align: center;
+    padding: 60px 32px;
+    animation: thanksIn 0.8s ease-out;
+  }
+
+  .form-thanks-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+
+  .form-thanks-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 48px);
+    line-height: 1.2;
+    color: var(--green-deep);
+    margin-bottom: 24px;
+    letter-spacing: -0.005em;
+  }
+
+  .form-thanks-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--mustard);
+    margin: 28px auto;
+  }
+
+  .form-thanks-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: var(--green-mid);
+    line-height: 1.5;
+  }
+
+  @keyframes thanksIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== Footer ===== */
+  footer.site-footer {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 70px 0 40px;
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--cream);
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+
+  .footer-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mustard-soft);
+    margin-bottom: 40px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(245, 239, 227, 0.15);
+  }
+
+  .footer-col h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--mustard-soft);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .footer-col p,
+  .footer-col a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(245, 239, 227, 0.85);
+    line-height: 1.8;
+    text-decoration: none;
+    display: block;
+  }
+
+  .footer-col a:hover {
+    color: var(--mustard);
+  }
+
+  .footer-scope {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(245, 239, 227, 0.7);
+    line-height: 1.7;
+    max-width: 720px;
+    margin-bottom: 30px;
+  }
+
+  .footer-scope strong {
+    color: var(--mustard-soft);
+    font-weight: 500;
+  }
+
+  .footer-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(245, 239, 227, 0.55);
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== Animations ===== */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 820px) {
+    .nav-frame { padding: 16px 24px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.12em; }
+    .nav-brand { font-size: 20px; }
+
+    .frame { padding: 0 24px; }
+    section.hero { padding: 60px 0 80px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero-photo-wrap { max-width: 360px; margin: 0 auto; }
+    section.content { padding: 70px 0; }
+
+    .offer-grid { grid-template-columns: 1fr; gap: 18px; }
+    .offer-card { padding: 36px 28px; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .manifesto { padding: 36px 24px; }
+  }
+
+  @media (max-width: 540px) {
+    .nav-links { display: none; }
+    .recognition-line { font-size: 19px; padding-left: 20px; }
+    .recognition-line:hover { padding-left: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="top-nav">
+  <div class="nav-frame">
+    <a href="#top" class="nav-brand">Holding Dear</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work With Me</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#faq">Questions</a></li>
+      <li><a href="#inquire">Inquire</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="frame">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">Matrescence companionship</div>
+        <h1 class="hero-headline">For the mother trying to find herself again — in someone she's never been.</h1>
+        <p class="hero-body">One-to-one companionship for women in the identity shift of early motherhood. A soft place to land while you figure out who you're becoming.</p>
+        <p class="hero-sig">I'm Marissa — certified matrescence guide, mother of two, and the steady presence beside you in the in-between.</p>
+      </div>
+      <div class="hero-photo-wrap">
+        <img src="123.jpg" alt="Marissa with her firstborn in a forest at golden hour" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECOGNITION ============ -->
+<section class="content alt-bg" id="recognition">
+  <div class="frame">
+    <h2 class="section-heading">Do any of these resonate?</h2>
+
+    <div class="recognition-list">
+      <p class="recognition-line">…you spent months preparing for everyone but yourself.</p>
+      <p class="recognition-line">…your nursing hours are spent wondering when you'll shower again.</p>
+      <p class="recognition-line">…you've started — and stopped — a hundred text messages to the people who love you, unable to answer "how are you doing?" honestly.</p>
+      <p class="recognition-line">…you know you need help, and still find yourself trying to do it all.</p>
+      <p class="recognition-line">…you find yourself apologizing for the help you do ask for.</p>
+      <p class="recognition-line">…you can name what your children need in a single glance, and somewhere along the way stopped asking what you need.</p>
+    </div>
+
+    <div class="manifesto">
+      <p class="manifesto-text">For everything we hold <em>dear</em> — shouldn't that include ourselves?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATRESCENCE ============ -->
+<section class="content" id="matrescence">
+  <div class="frame">
+    <span class="section-eyebrow">A word for what you're going through</span>
+    <h2 class="section-heading">What is <em>matrescence</em>?</h2>
+
+    <p class="body-text">Matrescence is the name for the transformation a woman moves through as she becomes — and keeps becoming — a mother. Like adolescence, it's a developmental passage that reshapes you physically, emotionally, relationally, spiritually. Unlike adolescence, almost no one prepares you for it.</p>
+
+    <div class="matrescence-pullquote">You are not falling apart. You are matrescing — changing into someone you haven't met yet.</div>
+
+    <p class="body-text">It is one of the most significant transitions a woman will ever move through, and it deserves more than being rushed past.</p>
+
+    <p class="body-text">My work is built on the Seasons of Matrescence framework, developed by Australian matrescence educator <a href="https://www.nikkimccahon.com" target="_blank" rel="noopener" style="color: var(--magenta); text-decoration: none; border-bottom: 1px solid var(--magenta);">Nikki McCahon</a> — an approach that honors this passage as cyclical, seasonal, and worthy of real support.</p>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="content alt-bg" id="work">
+  <div class="frame">
+    <span class="section-eyebrow">How I companion</span>
+    <h2 class="section-heading">Two ways to work with me.</h2>
+
+    <p class="body-text">My work is simple in shape and deep in practice: I hold space for mothers in the in-between — listening, reflecting, and reminding you of the wisdom you already carry. When you can't find your own belief in yourself, I'll hold it for you until you can.</p>
+
+    <p class="body-text">Our sessions are unhurried. We meet on video, you share what's on your mind, and I listen — really listen. I'll ask questions when they're useful, reflect what I'm hearing, and sometimes name patterns that take a beat to recognize. There's no homework, no curriculum to get through, no performance required. You don't have to arrive with a list of topics. The work is in the showing up.</p>
+
+    <p class="body-text">Three months is enough time for something to actually move. Early on, it's often just relief — finally saying things out loud to someone whose whole attention is on you. In the middle, we usually go deeper: the grief for the life before, the parts that don't match the story you expected. By the end, most mothers aren't "fixed" — nothing was broken — but they're steadier, more themselves, less alone in it. It's not a straight line, and it looks different for everyone. That's just the shape it tends to take.</p>
+
+    <div class="offer-grid">
+      <div class="offer-card primary">
+        <div class="offer-tag">The primary container</div>
+        <h3 class="offer-name">The Season</h3>
+        <p class="offer-desc">A three-month container for mothers who want steady companionship through a real stretch of becoming.</p>
+        <ul class="offer-detail-list">
+          <li class="offer-detail">Six 60-minute 1:1 sessions, biweekly</li>
+          <li class="offer-detail">WhatsApp support Monday, Wednesday, and Friday</li>
+          <li class="offer-detail">Send messages whenever; I respond on those days</li>
+          <li class="offer-detail">Shared reading and resources when they're the right fit</li>
+        </ul>
+        <p class="offer-price">$1,500 for the three months</p>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-tag">A single session</div>
+        <h3 class="offer-name">An Exhale</h3>
+        <p class="offer-desc">90 minutes of companionship to meet you where you are, with a week of WhatsApp support so you have somewhere to put the thoughts that arrive after.</p>
+        <ul class="offer-detail-list">
+          <li class="offer-detail">One 90-minute 1:1 session</li>
+          <li class="offer-detail">WhatsApp support during the surrounding week</li>
+          <li class="offer-detail">Held virtually, by video</li>
+        </ul>
+        <p class="offer-price">$250</p>
+      </div>
+    </div>
+
+    <p class="offer-note">Both held virtually.</p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="content" id="about">
+  <div class="frame">
+    <span class="section-eyebrow">About me</span>
+    <h2 class="section-heading">Hi there!</h2>
+
+    <div class="about-content">
+      <p>It is a firm belief of mine that our intuition can help guide us to a place of living in alignment with ourselves, and I want your intuition to help you recognize if I'm the best person to support you.</p>
+
+      <p>If you are like me, being a mother is one of the most important titles you hold. It's an incredible experience to raise a child. It can also be incredibly hard.</p>
+
+      <p>In my early days of motherhood I struggled with feeling disconnected from myself and isolated from a community of other mothers who might support me in a way I needed. Growing up in a family of women, this was the last experience I expected when I imagined the glowing days soaking in the newborn phase. I was often surprised to find myself struggling to share openly with those who messaged me and yet I longed for someone (not my therapist) to bear witness to this moment in my life.</p>
+
+      <p>As I lay awake in the middle of night nursing (for what felt like the millionth night), I soon discovered the word <em>matrescence</em>. Finally, a word to describe what was happening to me and illuminate that becoming a mother is a process, not an immediate occurrence following birth. Learning more about matrescence and how it impacts every mother was the start of my journey to finding a way back to myself. I wasn't the same, but I was more <em>me</em> than I'd ever been.</p>
+
+      <p>While I've always been interested in mother support work, it wasn't until after the birth of my first son that I felt compelled to find a way to make that support a reality. I became a certified matrescence guide, and having this knowledge helped me — in the aftermath of the birth of my second son — find myself again even faster.</p>
+
+      <p>As I navigated parenting two boys, work, home life, managing our paid support network, and the mental load — I found a calling to offer what I had been longing for.</p>
+
+      <p>Beyond a postpartum doula, more neutral than my "mom friends" and still NOT my therapist — I wanted to create a space to offer companionship for those also navigating early motherhood. A soft space to land when you are in the midst of finding your way back to a new version of yourself — whether weeks into your first or learning the landscape shifts of adding on — navigating all the things that life throws your way, and needing someone to bear witness to this season in your life. Whether it's mentorship, a listening ear, or someone to send midnight messages to without the worry of second-guessing what you wrote — I'm here for it.</p>
+
+      <p>I'm not a therapist or a mental health professional. I'm a companion for your matrescence — a steady presence beside you while you find your way.</p>
+
+      <div class="about-divider"></div>
+
+      <p class="about-subhead">Would we be mom friends?</p>
+
+      <p>When I am not spending time in my roles as a mother or partner, I'm staying connected to myself through tasting new wines, staying up way too late reading a new book (yes, likely one you saw recommended on BookTok), trying to finally win a game of mahjong, or manifesting something great in my life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESOURCES ============ -->
+<section class="content alt-bg" id="resources">
+  <div class="frame">
+    <span class="section-eyebrow">For continued exploration</span>
+    <h2 class="section-heading">A few resources for the path.</h2>
+
+    <p class="resources-intro">If you want to go deeper, these are some of the most thoughtful resources I know of on matrescence and early motherhood. Take what's useful, leave what isn't.</p>
+
+    <div class="resource-group">
+      <h3 class="resource-group-title">To read</h3>
+      <ul>
+        <li><em>Matrescence: On Pregnancy, Childbirth, and Motherhood</em> by Lucy Jones</li>
+        <li><em>What No One Tells You</em> by Alexandra Sacks and Catherine Birndorf</li>
+        <li><em>Mothershift: Reclaiming Motherhood as a Rite of Passage</em> by Jessie Harrold</li>
+        <li><em>To Have and to Hold: Motherhood, Marriage, and the Modern Dilemma</em> by Molly Millwood</li>
+        <li><em>Mothering the New Mother</em> by Sally Placksin</li>
+        <li><em>Fair Play</em> by Eve Rodsky</li>
+      </ul>
+    </div>
+
+    <div class="resource-group">
+      <h3 class="resource-group-title">To listen to</h3>
+      <ul>
+        <li><em>Motherhood Sessions</em> with Dr. Alexandra Sacks</li>
+        <li><em>The Mama Rising Podcast</em> with Amy Taylor-Kabbaz</li>
+      </ul>
+    </div>
+
+    <div class="resource-group">
+      <h3 class="resource-group-title">To go deeper into matrescence</h3>
+      <ul>
+        <li><a href="https://www.nikkimccahon.com" target="_blank" rel="noopener">Nikki McCahon — Seasons of Matrescence</a> — the framework I trained in</li>
+      </ul>
+    </div>
+
+    <div class="resource-group">
+      <h3 class="resource-group-title">For support beyond what I offer</h3>
+      <ul>
+        <li><strong>Postpartum Support International</strong> — 1-800-944-4773 (call or text; English &amp; Spanish)</li>
+        <li><strong>National Maternal Mental Health Hotline</strong> — 1-833-852-6262 (24/7, free, confidential)</li>
+        <li><strong>988 Suicide &amp; Crisis Lifeline</strong> — for any immediate mental health emergency</li>
+      </ul>
+    </div>
+
+    <div class="resource-group">
+      <h3 class="resource-group-title">For families of young children</h3>
+      <ul>
+        <li><strong>Parents as Teachers</strong> — free home visiting program for parents of children prenatal through age 5</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="content" id="faq">
+  <div class="frame">
+    <span class="section-eyebrow">Before you reach out</span>
+    <h2 class="section-heading">A few honest answers.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-question">Is this therapy?</p>
+        <p class="faq-answer">No. I'm not a therapist or a mental health professional, and this isn't treatment. Therapy tends to look at what's wrong and work to heal it. My work starts somewhere else — from the belief that you're not broken, you're becoming. If something comes up that would be better held by a therapist, I'll say so, and help you find that support.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">How is this different from a friend, a therapist, or a postpartum doula?</p>
+        <p class="faq-answer">A friend loves you, but is close to it and busy. A therapist treats what's wrong. A postpartum doula is wonderful — but usually focused on the household and your baby in the fourth trimester, and usually for a set stretch of weeks. I'm something else, and I'm not on a clock: a steady, neutral presence whose whole attention is on you and this passage. Not your house, not your baby. You.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">What actually happens in a session?</p>
+        <p class="faq-answer">We meet by video for an hour. You talk, I listen — and you don't have to arrive with a topic or know where to start. Some mothers come with something specific; others just need to think out loud with someone whose whole attention is on them. This is an hour that's just for you, and we can spend it however feels right in the moment.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">What if I don't know what to say, or don't have anything "big" to bring?</p>
+        <p class="faq-answer">That's welcome too. Some of the best sessions start with "I don't even know where to begin." You don't have to be in crisis to deserve this, and you don't have to perform having it together — or falling apart. Wherever you are is where we start.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Is this virtual? Do I need to be near you?</p>
+        <p class="faq-answer">Everything is held virtually, by video, with voice-note and text support in between. I'm based in San Antonio, but I companion mothers wherever they are. All you need is a phone or a laptop and a few quiet minutes.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Is this only for first-time mothers? How old does my baby need to be?</p>
+        <p class="faq-answer">No, and there's no wrong time. First baby, second, a newborn or a toddler — matrescence keeps unfolding as your children and your life keep changing. If you feel changed in ways you can't quite name, you're in the right place.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">How does the support between sessions work?</p>
+        <p class="faq-answer">Between sessions, you can reach out anytime something surfaces — a restless night with your mind too full, the 2am nursing hour, the moment right after someone said the wrong thing. Send a voice note or a text over WhatsApp whenever it arrives. I respond on Mondays, Wednesdays, and Fridays. Some weeks you'll send a lot; some weeks nothing. Both are fine.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Do you only work with mothers?</p>
+        <p class="faq-answer">Matrescence is the heart of what I do. But the deeper work — being witnessed through a season of becoming someone new — isn't only motherhood's. If you're in another kind of threshold, a career you're reconsidering, a shift you don't quite have words for, and you want someone steady in your corner, reach out. We'll see if it's a fit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INQUIRE ============ -->
+<section class="content alt-bg" id="inquire">
+  <div class="frame">
+    <span class="section-eyebrow">If something resonates</span>
+    <h2 class="section-heading">Let's talk.</h2>
+
+    <div class="inquire-content">
+      <p class="inquire-intro">If something here resonates and you'd like to talk, send me a few words. I'll write back personally — usually within two business days.</p>
+
+      <form class="inquire-form" id="inquire-form" action="https://formspree.io/f/xredvljz" method="POST">
+
+        <div class="form-field">
+          <label for="name" class="form-label">Your name</label>
+          <input type="text" id="name" name="name" class="form-input" required />
+        </div>
+
+        <div class="form-field">
+          <label for="email" class="form-label">Your email</label>
+          <input type="email" id="email" name="email" class="form-input" required />
+        </div>
+
+        <div class="form-field">
+          <label for="offer" class="form-label">Which feels right for you?</label>
+          <select id="offer" name="offer" class="form-select">
+            <option value="The Season">The Season — 3-month container</option>
+            <option value="An Exhale">An Exhale — single 90-min session</option>
+            <option value="Not sure">Not sure yet — I'd like to talk it through</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="where" class="form-label">Tell me a little about where you are</label>
+          <textarea id="where" name="where" class="form-textarea"></textarea>
+          <p class="form-helper">There's no right answer here. A sentence is fine; a paragraph is fine. Anything you'd like me to know before we connect.</p>
+        </div>
+
+        <button type="submit" class="form-submit">Send</button>
+      </form>
+
+      <div class="form-thanks" id="form-thanks" style="display: none;">
+        <div class="form-thanks-eyebrow">Your note has arrived</div>
+        <h3 class="form-thanks-headline">Thank you.</h3>
+        <div class="form-thanks-divider"></div>
+        <p class="form-thanks-body">I look forward to connecting with you shortly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-brand">Holding Dear</p>
+    <p class="footer-tagline">Companionship for early motherhood</p>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:hello@holdingdear.com">hello@holdingdear.com</a>
+        <p>Held virtually · based in San Antonio, Texas</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Practice</h5>
+        <p>Marissa Rittel</p>
+        <p>Certified Matrescence Guide</p>
+        <p>Trained through Nikki McCahon's<br/>Seasons of Matrescence</p>
+      </div>
+    </div>
+
+    <p class="footer-scope">
+      <strong>A note on scope of practice:</strong> I am not a licensed therapist, counselor, or medical provider, and the companionship I offer is not a substitute for mental health care or medical treatment. If you are in crisis, please call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-833-852-6262</strong> (National Maternal Mental Health Hotline, available 24/7).
+    </p>
+
+    <p class="footer-meta">© 2026 New Mom Resources DBA Holding Dear. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Handle inquiry form submission via AJAX so we stay on-page
+  (function() {
+    var form = document.getElementById('inquire-form');
+    var thanks = document.getElementById('form-thanks');
+    if (!form || !thanks) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          thanks.style.display = 'block';
+          // Scroll to top of thank-you so message is visible
+          thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          response.json().then(function(data) {
+            alert('Something went wrong. Please try again, or email hello@holdingdear.com directly.');
+          });
+        }
+      })
+      .catch(function(error) {
+        alert('Something went wrong. Please try again, or email hello@holdingdear.com directly.');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
